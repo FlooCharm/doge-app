@@ -16,6 +16,16 @@ class DogeMeme extends Component {
 		})
 	}
 
+	handleClick() {
+		document.getElementsByTagName('input')[0].value = '';
+		document.getElementsByTagName('input')[1].value = '';
+
+		this.setState({
+			topTxt: 'TOP TEXT',
+			bottomTxt: 'BOTTOM TEXT'
+		})
+	}
+
 	render() {
 		return (
 			<div>
@@ -24,8 +34,11 @@ class DogeMeme extends Component {
 					<input placeholder='bottom text' onChange={(e)=> this.handleTextChange(e.target.value, 'bottomTxt')}/>
 				</div>
 				<div className='doge-bg flex col justify-content-between align-items-center'>
-				<p className="txt">{this.state.topTxt}</p>
-				<p className="txt">{this.state.bottomTxt}</p>
+					<p className="txt">{this.state.topTxt}</p>
+					<p className="txt">{this.state.bottomTxt}</p>
+				</div>
+				<div className="btn">
+					<button onClick={() => this.handleClick()}>RESET</button>
 				</div>
 			</div>
 		);
