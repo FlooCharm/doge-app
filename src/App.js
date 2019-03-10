@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="content">
-        <p>Doge Meme</p>
+        <p className="title">Doge Meme</p>
         <DogeMeme 
           topTxt='cuac'
           bottomTxt='cuac'
